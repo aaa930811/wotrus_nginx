@@ -1,0 +1,12 @@
+version: "3"
+services:
+  wotrus_nginx:
+    image: wotrus_nginx:latest
+    restart: always
+    ports:
+      - 443:443
+    volumes:
+      - "/etc/wotrus_nginx/nginx.conf:/usr/local/nginx/conf/nginx.conf"
+      - "/etc/wotrus_nginx/conf.d:/usr/local/nginx/conf/conf.d"
+      - "/etc/wotrus_nginx/ssl:/usr/local/nginx/conf/ssl"
+      - "/etc/wotrus_nginx/logs:/var/log/nginx"
